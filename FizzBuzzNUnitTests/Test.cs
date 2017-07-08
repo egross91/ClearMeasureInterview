@@ -62,7 +62,7 @@ namespace FizzBuzzUnitTests
             var results = this.FizzBuzz.CallFizzBuzz(0);
 
             // Assert.
-            // NOTE: Without trying to access @results, the exception is never thrown.
+            // NOTE: Without trying to access @results, the exception is never thrown due to lazy execution.
             Assert.AreEqual(0, results.Count());
         }
 
@@ -86,6 +86,7 @@ namespace FizzBuzzUnitTests
             var results = this.FizzBuzz.CallFizzBuzz(14);
 
             // Assert.
+            Assert.True(results.ElementAt(1).Equals(new FizzBuzzResult(2, null)));
             Assert.True(results.ElementAt(6).Equals(new FizzBuzzResult(7, "Prime")));
         }
 
