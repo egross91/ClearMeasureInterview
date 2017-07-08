@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using NUnit.Framework;
 using FizzBuzzLibrary;
@@ -12,25 +13,81 @@ namespace FizzBuzzUnitTests
 
 		private FizzBuzz FizzBuzz;
 
-		#endregion
+        #endregion
 
-		#region Unit tests.
+        #region Testing lifecycle methods.
 
-		[Test]
-		public void FizzBuzz_DefaultComparator_ShouldReturnFizzBuzzFor15_True()
+        [TearDown]
+        public void NullifyFizzBuzz()
+        {
+            this.FizzBuzz = null;
+		}
+
+        #endregion
+
+        #region Unit tests.
+
+        [Test]
+        public void FizzBuzz_DefaultComparator_ShouldReturnFizzBuzzForFifteenthElement()
 		{
 			// Setup.
 			this.FizzBuzz = new FizzBuzz();
 
 			// Execute.
-			IEnumerable<FizzBuzzResult> results = this.FizzBuzz.CallFizzBuzz(15);
+			var results = this.FizzBuzz.CallFizzBuzz(15);
 
             // Assert.
-            Assert.AreEqual(results.Count(), 15);
+            Assert.AreEqual(15, results.Count());
             Assert.True(results.ElementAt(2).Equals(new FizzBuzzResult(3, "Fizz")));
             Assert.True(results.ElementAt(4).Equals(new FizzBuzzResult(5, "Buzz")));
             Assert.True(results.ElementAt(14).Equals(new FizzBuzzResult(15, "FizzBuzz")));
 		}
+
+        [Test]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void FizzBuzz_NullComparator_ShouldThrowArgumentNullException()
+        {
+            // Setup & Execute.
+            this.FizzBuzz = new FizzBuzz(null);
+        }
+
+        [Test]
+        [ExpectedException(typeof(ArgumentException))]
+        public void FizzBuzz_InvalidUpperBound_ShouldThrowArgumentException()
+        {
+            // Setup.
+            this.FizzBuzz = new FizzBuzz();
+
+            // Execute.
+            var results = this.FizzBuzz.CallFizzBuzz(0);
+
+            // Assert.
+            // NOTE: Without trying to access @results, the exception is never thrown.
+            Assert.AreEqual(0, results.Count());
+        }
+
+        [Test]
+        public void FizzBuzz_CustomComparator_ShouldShowPrimeForSeventhElement()
+        {
+            // Setup.
+            this.FizzBuzz = new FizzBuzz(delegate(int val)
+            {
+                if (val == 7)
+	            {
+	                return new FizzBuzzResult(val, "Prime");
+	            }
+	            else
+	            {
+	                return new FizzBuzzResult(val, null);
+	            }
+	        });
+
+            // Execute.
+            var results = this.FizzBuzz.CallFizzBuzz(14);
+
+            // Assert.
+            Assert.True(results.ElementAt(6).Equals(new FizzBuzzResult(7, "Prime")));
+        }
 
 		#endregion
 	}
