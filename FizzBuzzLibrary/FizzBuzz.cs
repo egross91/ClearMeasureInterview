@@ -73,13 +73,23 @@ namespace FizzBuzzLibrary
 
     public class FizzBuzzResult 
     {
-        public int Value { get; }
-        public String Result { get; }
+        public readonly int Value;
+        public readonly String Result;
 
         public FizzBuzzResult(int v, String r)
         {
             this.Value = v;
             this.Result = r;
+        }
+
+        public bool Equals(FizzBuzzResult other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+
+            return (this.Value == other.Value && this.Result == other.Result);
         }
     }
 }
