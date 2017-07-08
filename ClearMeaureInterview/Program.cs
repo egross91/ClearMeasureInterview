@@ -8,10 +8,10 @@ namespace ClearMeaureInterview
     {
         public static void Main(string[] args)
         {
-            FizzBuzz fizzBuzz = new FizzBuzz();
-
             try 
             {
+                FizzBuzz fizzBuzz = new FizzBuzz();
+
 				IEnumerable<FizzBuzzResult> results = fizzBuzz.CallFizzBuzz(Convert.ToInt32(Console.ReadLine()));
 
 				foreach (FizzBuzzResult result in results)

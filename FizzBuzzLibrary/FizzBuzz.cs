@@ -43,6 +43,11 @@ namespace FizzBuzzLibrary
 
         public FizzBuzz(Func<Int32, FizzBuzzResult> comparator)
         {
+            if (comparator == null)
+            {
+                throw new ArgumentNullException(nameof(comparator), "FizzBuzz comparator cannot be null.");
+            }
+
             this.Comparator = comparator;
         }
 
@@ -52,6 +57,11 @@ namespace FizzBuzzLibrary
 
         public IEnumerable<FizzBuzzResult> CallFizzBuzz(int upperBound)
         {
+            if (upperBound < 1)
+            {
+                throw new ArgumentException("FizzBuzz upper bound cannot be less than 1.", nameof(upperBound));
+            }
+
             for (int i = 1; i <= upperBound; ++i)
             {
                 yield return this.Comparator(i);
