@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClearMeaureInterview", "Cle
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzzLibrary", "FizzBuzzLibrary\FizzBuzzLibrary.csproj", "{AB250F45-5BDE-4453-825B-36F912DBFCA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzzUnitTests", "FizzBuzzUnitTests\FizzBuzzUnitTests.csproj", "{4D8CFD2B-8AE6-4E56-A305-52529F0ABCB9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FizzBuzzNUnitTests", "FizzBuzzNUnitTests\FizzBuzzNUnitTests.csproj", "{45AD8964-2EAE-43EF-B4F8-B6E7CAE7A33B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +21,9 @@ Global
 		{AB250F45-5BDE-4453-825B-36F912DBFCA3}.Debug|x86.Build.0 = Debug|Any CPU
 		{AB250F45-5BDE-4453-825B-36F912DBFCA3}.Release|x86.ActiveCfg = Release|Any CPU
 		{AB250F45-5BDE-4453-825B-36F912DBFCA3}.Release|x86.Build.0 = Release|Any CPU
-		{4D8CFD2B-8AE6-4E56-A305-52529F0ABCB9}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{4D8CFD2B-8AE6-4E56-A305-52529F0ABCB9}.Debug|x86.Build.0 = Debug|Any CPU
-		{4D8CFD2B-8AE6-4E56-A305-52529F0ABCB9}.Release|x86.ActiveCfg = Release|Any CPU
-		{4D8CFD2B-8AE6-4E56-A305-52529F0ABCB9}.Release|x86.Build.0 = Release|Any CPU
+		{45AD8964-2EAE-43EF-B4F8-B6E7CAE7A33B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{45AD8964-2EAE-43EF-B4F8-B6E7CAE7A33B}.Debug|x86.Build.0 = Debug|Any CPU
+		{45AD8964-2EAE-43EF-B4F8-B6E7CAE7A33B}.Release|x86.ActiveCfg = Release|Any CPU
+		{45AD8964-2EAE-43EF-B4F8-B6E7CAE7A33B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
