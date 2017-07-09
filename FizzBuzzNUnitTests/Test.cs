@@ -44,15 +44,13 @@ namespace FizzBuzzUnitTests
 		}
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void FizzBuzz_NullComparator_ShouldThrowArgumentNullException()
         {
             // Setup & Execute.
-            this.FizzBuzz = new FizzBuzz(null);
+            Assert.Throws<ArgumentNullException>(() => new FizzBuzz(null));
         }
 
         [Test]
-        [ExpectedException(typeof(ArgumentException))]
         public void FizzBuzz_InvalidUpperBound_ShouldThrowArgumentException()
         {
             // Setup.
@@ -61,9 +59,8 @@ namespace FizzBuzzUnitTests
             // Execute.
             var results = this.FizzBuzz.CallFizzBuzz(0);
 
-            // Assert.
-            // NOTE: Without trying to access @results, the exception is never thrown due to lazy execution.
-            Assert.AreEqual(0, results.Count());
+            // Assert. NOTE: Without trying to access @results, the exception is never thrown due to lazy execution.
+            Assert.Throws<ArgumentException>(() => results.Count());
         }
 
         [Test]
