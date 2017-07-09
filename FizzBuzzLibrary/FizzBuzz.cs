@@ -7,6 +7,9 @@ namespace FizzBuzzLibrary
     {
         #region Class Variables
 
+        /// <summary>
+        /// The default comparator that similates the functionality outlined by the classic problem FizzBuzz.
+        /// </summary>
         private static readonly Func<Int32, FizzBuzzResult> DefaultComparator = delegate (int arg)
         {
             bool divisibleBy3 = arg % 3 == 0;
@@ -30,6 +33,10 @@ namespace FizzBuzzLibrary
             }
         };
 
+        /// <summary>
+        /// The (potentially custom) comparator to be used for returning the values of FizzBuzz.
+        /// </summary>
+        /// <value>The comparator.</value>
         public Func<Int32, FizzBuzzResult> Comparator { private get; set; }
 
         #endregion
@@ -55,6 +62,11 @@ namespace FizzBuzzLibrary
 
         #region API
 
+        /// <summary>
+        /// Executes the implementation of FizzBuzz from 1 to an upper bound.
+        /// </summary>
+        /// <returns>The results of executing FizzBuzz's implementation against values [1..n].</returns>
+        /// <param name="upperBound">The upper bound of values to execute against.</param>
         public IEnumerable<FizzBuzzResult> CallFizzBuzz(int upperBound)
         {
             if (upperBound < 1)
@@ -82,6 +94,12 @@ namespace FizzBuzzLibrary
             this.Result = r;
         }
 
+        /// <summary>
+        /// Determines whether the specified <see cref="FizzBuzzLibrary.FizzBuzzResult"/> is equal to the current <see cref="T:FizzBuzzLibrary.FizzBuzzResult"/>.
+        /// </summary>
+        /// <param name="other">The <see cref="FizzBuzzLibrary.FizzBuzzResult"/> to compare with the current <see cref="T:FizzBuzzLibrary.FizzBuzzResult"/>.</param>
+        /// <returns><c>true</c> if the specified <see cref="FizzBuzzLibrary.FizzBuzzResult"/> is equal to the current
+        /// <see cref="T:FizzBuzzLibrary.FizzBuzzResult"/>; otherwise, <c>false</c>.</returns>
         public bool Equals(FizzBuzzResult other)
         {
             if (other == null)
