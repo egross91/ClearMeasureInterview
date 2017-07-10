@@ -4,12 +4,12 @@ A flexible and testable implementation of [FizzBuzz](https://en.wikipedia.org/wi
 ## Requirements
 -  [Visual Studio 2017](https://www.visualstudio.com/downloads/)
 
-### Installation
+## Installation
 
-#### Build from Visual Studio
+### Build from Visual Studio
 Just clone the repo and open solution (.sln) in Visual Studio.
 
-#### Build from CLI
+### Build from CLI
 **Only works with Mac.**
 
 ```
@@ -22,13 +22,13 @@ cd path/to/proj/scripts
 ##### Aside
 I did attempt to get the Windows build script working but did not bother after running into numerous issues.
 
-### Testing
+## Testing
 Tests were created using NUnit 3.7.1. 
 
-#### Run Tests in Visual Studio
+### Run Tests in Visual Studio
 Build the solution and run the tests using [NUnit Test Adapter](https://www.nuget.org/packages/NUnit3TestAdapter/).
 
-#### Run Tests from CLI
+### Run Tests from CLI
 *Requires solution to be built first.*
 
 - Install [NUnit3 Console](https://www.nuget.org/packages/NUnit.Console).
