@@ -1,7 +1,5 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
+<Project ToolsVersion="4.0" Sdk="Microsoft.NET.Sdk" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TargetFramework>netstandard1.4</TargetFramework>
   </PropertyGroup>
-
 </Project>
